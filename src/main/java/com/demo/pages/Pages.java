@@ -3,7 +3,7 @@ package com.demo.pages;
 import com.demo.core.allure.AllureLogger;
 
 public class Pages extends AllureLogger {
-    public static String basicURL = "http://automationpractice.com/index.php";
+    public static String basicURL = "https://www.amazon.com/";
     private static MainPage mainPage;
 
 

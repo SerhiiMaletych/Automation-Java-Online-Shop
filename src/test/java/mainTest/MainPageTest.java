@@ -18,12 +18,5 @@ public class MainPageTest extends BaseTest {
             Assert.assertEquals(actualURL, expectedURL);
         }
 
-        @Test
-         public void checkMainPageSearchForAvailability(){
-             open(basicURL);
-             mainPage().searchFor("Dress");
-             String expectedURL = WebDriverRunner.getWebDriver().getCurrentUrl();
-             Assert.assertTrue(expectedURL.contains("search_query=Dress"));
 
-        }
 }
