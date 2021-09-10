@@ -19,7 +19,7 @@ public class MainPageTest extends BaseTest {
         @Test
          public void searchButtonReturnsCorrectPage(){
             open(basicURL);
-            mainPage().searchFor("Dress");
+            commonButtons().searchFor("Dress");
             String expectedURL = WebDriverRunner.getWebDriver().getCurrentUrl();
             Assert.assertTrue(expectedURL.contains("Dress"));
         }
@@ -28,6 +28,24 @@ public class MainPageTest extends BaseTest {
              open(basicURL);
              commonButtons().clickOnMainLogo();
              Assert.assertTrue(basicURL.contains("amazon.com"));
+        }
+
+        @Test
+        public void searchButtonWithFilterReturnsCorrectPage() {
+             open(basicURL);
+            commonButtons().filter("Books");
+            commonButtons().searchFor("Java");
+            String expectedURL = WebDriverRunner.getWebDriver().getCurrentUrl();
+            Assert.assertTrue(expectedURL.contains("books"));
+            Assert.assertTrue(expectedURL.contains("Java"));
+        }
+
+        @Test
+        public void searchButtonWithFilterHasSpecifiedItemOnPage() {
+             open(basicURL);
+             commonButtons().filter("Books");
+             commonButtons().searchFor("Java");
+             Assert.assertTrue(bookPage().isItemDisplayed());
         }
 
 

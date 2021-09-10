@@ -7,6 +7,7 @@ public class Pages extends AllureLogger {
 
     private static MainPage mainPage;
     private static CommonButtons commonButtons;
+    private static BookPage bookPage;
     public static MainPage mainPage() {
         if (mainPage == null) {
             mainPage = new MainPage();
@@ -19,6 +20,13 @@ public class Pages extends AllureLogger {
             commonButtons = new CommonButtons();
         }
         return commonButtons;
+    }
+
+    public static BookPage bookPage() {
+        if(bookPage == null) {
+            bookPage = new BookPage();
+        }
+        return bookPage;
     }
 
 
