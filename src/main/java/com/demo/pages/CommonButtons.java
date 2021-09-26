@@ -1,10 +1,13 @@
 package com.demo.pages;
 
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+
 import static com.codeborne.selenide.Selenide.element;
+import static com.codeborne.selenide.Selenide.elements;
 
 public class CommonButtons {
 
@@ -25,23 +28,6 @@ public class CommonButtons {
         filterButton.sendKeys(text);
    }
 
-   public void clickOnDeliverToButton() {
-    element(By.xpath("//a[@id='nav-global-location-popover-link']")).click();
-   }
 
-   public void clickOnCountryButton() {
-       chooseCountryButton.click();
-   }
-   public void clickOnSpain(){
-       element((By.id("GLUXCountryList_209"))).click();
-   }
 
-   public void clickOnAcceptDeliveryChangeButton() {
-        element(By.xpath(("//button[@id='a-autoid-2-announce']"))).click();
-   }
-
-   public String getDeliveryCountry() {
-        String country = element(By.xpath("//*[@id='glow-ingress-line2']")).getText();
-        return country;
-   }
 }

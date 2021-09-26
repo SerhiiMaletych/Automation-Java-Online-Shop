@@ -48,16 +48,9 @@ public class MainPageTest extends BaseTest {
              Assert.assertTrue(bookPage().isItemDisplayed());
         }
 
-        @Test
-        public void changeDeliveryCountry(){
-             open(basicURL);
-             commonButtons().clickOnDeliverToButton();
-             commonButtons().clickOnCountryButton();
-             commonButtons().clickOnSpain();
-             commonButtons().clickOnAcceptDeliveryChangeButton();
-            String country = "Spain";
-             Assert.assertEquals(commonButtons().getDeliveryCountry(), country);
-        }
+
+
+
 
 
 }
